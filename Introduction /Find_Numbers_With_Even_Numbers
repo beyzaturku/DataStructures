@@ -1,1 +1,25 @@
+class Solution {
+    public int findNumbers(int[] nums) {  
+        int evenDigitNumbersCount = 0;
+        
+        for(int number : nums){
+            if(getNumberOfDigits(number) % 2 == 0){
+                evenDigitNumbersCount++;
+            }
+        }
+        return evenDigitNumbersCount;
+    }
+    
+    public int getNumberOfDigits(int number){
+        if(number == 0) return 1;
+        int digitsCount = 0;
+        
+        while(number != 0){
+            number /= 10;
+            digitsCount++;
+        }
+        
+        return digitsCount;
+    }
+}
 
